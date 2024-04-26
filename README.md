@@ -68,8 +68,9 @@
     - Example: Social media data, Sensor data, Genomic data.
 
 
+
 # Data Manipulation
-#### Import, Store, and Export Data:
+#### Import, Store, and Export Data
   - Using Python (Pandas) for CSV Files:
     _import pandas as pd
     
@@ -126,3 +127,41 @@
           {"id": 1, "name": "John", "age": 30},
           {"id": 2, "name": "Jane", "age": 25}
       ]_
+
+
+#### Clean Data
+- Purpose of Data Cleaning: Data cleaning aims to improve data quality by identifying and correcting errors, inconsistencies, and missing values.
+    
+- Common Practices:
+  - Handling NULL Values: Replace NULL values with a default value or fill them using statistical measures.
+    _# Handling NULL values in a DataFrame using Pandas
+    df.fillna(0, inplace=True)  # Replace NULL values with 0_
+
+  - Handling Special Characters: Remove or replace special characters that may cause issues during analysis.
+    _# Removing special characters from a column in a DataFrame using Pandas
+    df['column_name'] = df['column_name'].str.replace('[^a-zA-Z0-9]', '')_
+    
+  - Trimming Spaces: Remove leading and trailing spaces from text data.
+    _# Trimming spaces from a column in a DataFrame using Pandas
+    df['column_name'] = df['column_name'].str.strip()_
+
+  - Inconsistent Formatting: Standardize data formats to ensure consistency.
+    _# Converting text data to lowercase in a column using Pandas
+    df['column_name'] = df['column_name'].str.lower()_
+
+  - Removing Duplicates: Identify and remove duplicate records from the dataset.
+    _# Removing duplicates from a DataFrame using Pandas
+    df.drop_duplicates(inplace=True)_
+
+  - Imputing Data: Fill missing values with estimated or calculated values.
+    _# Imputing missing values with mean in a DataFrame using Pandas
+    mean_value = df['column_name'].mean()
+    df['column_name'].fillna(mean_value, inplace=True)_
+    
+- Validating Data
+  - Definition: Data validation ensures that the data meets certain quality standards or criteria.
+    _# Validating data to check for NULL values in a DataFrame using Pandas
+    if df.isnull().values.any():
+        print("Data contains NULL values.")
+    else:
+        print("Data is valid.")_
