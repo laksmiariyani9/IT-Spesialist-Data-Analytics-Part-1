@@ -66,3 +66,63 @@
   - Big Data:
     - Definition: Big Data refers to datasets that are too large or complex to be processed using traditional data processing applications.
     - Example: Social media data, Sensor data, Genomic data.
+
+
+# Data Manipulation
+#### Import, Store, and Export Data:
+  - Using Python (Pandas) for CSV Files:
+    _import pandas as pd
+    
+    # Import data from CSV file
+    df = pd.read_csv('data.csv')
+    
+    # Store data to SQL database
+    df.to_sql('table_name', connection_object)
+    
+    # Export data to CSV file
+    df.to_csv('exported_data.csv', index=False)_
+  
+  - Using SQL for Database Import/Export:
+    _-- Import data from CSV file into SQL database
+    LOAD DATA INFILE 'data.csv' INTO TABLE table_name FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
+    
+    -- Export data from SQL database to CSV file
+    SELECT * INTO OUTFILE 'exported_data.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' FROM table_name;_
+
+  - Using Microsoft Excel (Power Query) for Import/Export:
+    _let
+        Source = Csv.Document(File.Contents("data.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+        table = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+        #"Changed Type" = Table.TransformColumnTypes(table,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}}),
+        #"Exported Data" = Table.ToCsv(#"Changed Type", "exported_data.csv")
+    in
+        #"Exported Data"_
+
+    
+#### Common Data Storage File Formats:
+  - Delimited Data Files (CSV): Delimiter-separated values, commonly comma-separated (CSV) or tab-separated (TSV).
+    - Example: data.csv
+      
+  - XML (eXtensible Markup Language): Stores data in a structured format using tags.
+    - Example: data.xml
+    - Example Structure:
+      _<data>
+          <record>
+              <id>1</id>
+              <name>John</name>
+              <age>30</age>
+          </record>
+          <record>
+              <id>2</id>
+              <name>Jane</name>
+              <age>25</age>
+          </record>
+      </data>_
+    
+  - JSON (JavaScript Object Notation): Stores data in a lightweight, human-readable format.
+    - Example: data.json
+    - Example Structure:
+      _[
+          {"id": 1, "name": "John", "age": 30},
+          {"id": 2, "name": "Jane", "age": 25}
+      ]_
