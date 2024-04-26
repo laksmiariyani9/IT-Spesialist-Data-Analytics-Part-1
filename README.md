@@ -70,7 +70,7 @@
 
 
 # Data Manipulation
-#### Import, Store, and Export Data
+### Import, Store, and Export Data
   - Using Python (Pandas) for CSV Files:
     _import pandas as pd
     
@@ -129,7 +129,7 @@
       ]_
 
 
-#### Clean Data
+### Clean Data
 - Purpose of Data Cleaning: Data cleaning aims to improve data quality by identifying and correcting errors, inconsistencies, and missing values.
     
 - Common Practices:
