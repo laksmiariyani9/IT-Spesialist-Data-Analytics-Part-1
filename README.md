@@ -69,6 +69,7 @@
 
 
 
+
 # Data Manipulation
 ### Import, Store, and Export Data
   - Using Python (Pandas) for CSV Files:
@@ -220,3 +221,46 @@
     df_filtered = df[df['Age'] > 30]
     print("\nFiltered DataFrame:")
     print(df_filtered)_
+
+
+### Aggregate Data:
+- Purpose of Data Aggregation: Aggregating data aims to combine and summarize information to reveal patterns, trends, and statistical insights.
+
+- Common Practices:
+  - Grouping:
+    - Group data based on one or more variables to perform operations within each group.
+      _# Grouping DataFrame by a column and calculating the mean using Pandas
+      grouped_df = df.groupby('column_name').mean()_
+
+  - Joining/Merging:
+    - Combine data from multiple sources based on common columns or keys.
+      _# Joining two DataFrames based on a common column using Pandas
+      merged_df = pd.merge(df1, df2, on='common_column')_
+
+  - Summarizing:
+    - Calculate summary statistics such as mean, median, sum, etc., for the entire dataset or within groups.
+      _# Calculating the sum of a column in a DataFrame using Pandas
+      column_sum = df['column_name'].sum()_
+
+  - Pivoting:
+    - Restructure the dataset by changing the orientation of the data based on rows and columns.
+      _# Pivoting DataFrame to create a pivot table using Pandas
+      pivot_table = df.pivot_table(index='row_column', columns='column_column', values='value_column', aggfunc='sum')_
+      
+- Example:
+  - Let's consider an example of grouping and summarizing data using Pandas in a Jupyter Notebook:
+    _import pandas as pd
+    
+    # Create a sample DataFrame
+    data = {'Category': ['A', 'B', 'A', 'B', 'A'],
+            'Value': [10, 20, 30, 40, 50]}
+    df = pd.DataFrame(data)
+    
+    # Grouping DataFrame by Category and calculating the sum
+    grouped_df = df.groupby('Category').sum()
+    print("Grouped DataFrame:")
+    print(grouped_df)
+    
+    # Calculating the total sum of the 'Value' column
+    total_sum = df['Value'].sum()
+    print("\nTotal Sum of 'Value' column:", total_sum)_
