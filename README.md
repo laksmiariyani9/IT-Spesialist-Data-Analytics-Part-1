@@ -7,25 +7,25 @@
 
 
 #### Describe Basic Data Variable Types
-  - Boolean:
+  - Boolean
     - Definition: Boolean data type represents two possible values: true or false.
     - Example:
       - _is_valid = True_
         
-  - Numeric:
+  - Numeric
     - Definition: Numeric data types represent numbers and can be further categorized into integers and floating-point numbers.
     - Example:
       - _age = 25
       - height = 1.75_
         
-  - String:
+  - String
     - Definition: String data type represents textual data, consisting of a sequence of characters.
     - Example:
       - _name = "John Doe"_
 
 
 #### Describe Basic Structures Used in Data Analytics
-  - Tables:
+  - Tables
     - Definition: Tables organize data into rows and columns, providing a structured way to store and manipulate data.
     - Example (using Pandas DataFrame):
       - _import pandas as pd
@@ -36,11 +36,11 @@
         df = pd.DataFrame(data)
         df_
   
-  - Rows and Columns:
+  - Rows and Columns
     - Definition: Rows represent individual records in a table, while columns represent attributes or fields of the data.
     - Example: (_Already shown above in DataFrame example_)
     
-  - Lists:
+  - Lists
     - Definition: Lists are ordered collections of elements that can be of different types.
     - Example:
       _numbers = [1, 2, 3, 4, 5]
@@ -48,22 +48,27 @@
 
 
 #### Describe Data Categories:
-  - Qualitative Data:
+  - Qualitative Data
     - Definition: Qualitative data describes qualities or characteristics and is non-numeric.
     - Example: Gender (Male, Female), Color (Red, Blue, Green).
-  - Quantitative Data:
+  
+  - Quantitative Data
     - Definition: Quantitative data represents quantities or numerical measurements.
     - Example: Height, Weight, Age.
-  - Structured Data:
+  
+  - Structured Data
     - Definition: Structured data is organized and follows a specific schema or format.
     - Example: Relational databases, CSV files.
-  - Unstructured Data:
+  
+  - Unstructured Data
     - Definition: Unstructured data lacks a predefined structure and organization.
     - Example: Text documents, Images, Videos.
-  - Metadata:
+  
+  - Metadata
     - Definition: Metadata provides information about other data.
     - Example: File creation date, Data source, Data format.
-  - Big Data:
+  
+  - Big Data
     - Definition: Big Data refers to datasets that are too large or complex to be processed using traditional data processing applications.
     - Example: Social media data, Sensor data, Genomic data.
 
@@ -190,32 +195,32 @@
 - Purpose of Data Organization: Organizing data aims to structure and arrange it in a way that facilitates analysis and enhances its usability.
 
 - Common Practices:
-  - Sorting:
+  - Sorting
     - Sort data based on one or more columns to arrange it in a specified order.
       _# Sorting DataFrame by a column using Pandas
       df_sorted = df.sort_values(by='column_name', ascending=True)_
 
-  - Filtering:
+  - Filtering
     - Filter data based on specified conditions to retrieve relevant subsets.
       _# Filtering DataFrame based on a condition using Pandas
       df_filtered = df[df['column_name'] > threshold]_
     
-  - Slicing:
+  - Slicing
     - Extract specific rows or columns from the dataset.
       _# Slicing DataFrame to extract rows and columns using Pandas
       df_slice = df.iloc[0:5, 1:3]  # Rows 0-4, Columns 1-2_
     
-  - Transposing:
+  - Transposing
     - Flip rows and columns to change the orientation of the dataset.
       _# Transposing DataFrame to switch rows and columns using Pandas
       df_transposed = df.transpose()_
     
-  - Appending:
+  - Appending
     - Combine or append two or more datasets together.
       _# Appending one DataFrame to another using Pandas
       df_appended = df1.append(df2)_
     
-  - Truncating:
+  - Truncating
     - Remove rows or columns from the dataset.
       _# Truncating DataFrame to remove rows based on index using Pandas
       df_truncated = df.truncate(before=0, after=4)  # Keep rows 0-4_
@@ -245,22 +250,22 @@
 - Purpose of Data Aggregation: Aggregating data aims to combine and summarize information to reveal patterns, trends, and statistical insights.
 
 - Common Practices:
-  - Grouping:
+  - Grouping
     - Group data based on one or more variables to perform operations within each group.
       _# Grouping DataFrame by a column and calculating the mean using Pandas
       grouped_df = df.groupby('column_name').mean()_
 
-  - Joining/Merging:
+  - Joining/Merging
     - Combine data from multiple sources based on common columns or keys.
       _# Joining two DataFrames based on a common column using Pandas
       merged_df = pd.merge(df1, df2, on='common_column')_
 
-  - Summarizing:
+  - Summarizing
     - Calculate summary statistics such as mean, median, sum, etc., for the entire dataset or within groups.
       _# Calculating the sum of a column in a DataFrame using Pandas
       column_sum = df['column_name'].sum()_
 
-  - Pivoting:
+  - Pivoting
     - Restructure the dataset by changing the orientation of the data based on rows and columns.
       _# Pivoting DataFrame to create a pivot table using Pandas
       pivot_table = df.pivot_table(index='row_column', columns='column_column', values='value_column', aggfunc='sum')_
