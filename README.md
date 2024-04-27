@@ -72,7 +72,25 @@
 
 # Data Manipulation
 ### Import, Store, and Export Data
-  - Using Python (Pandas) for CSV Files:
+- Importing Data
+  - Definition: Importing data involves bringing data from external sources into a data analytics environment. These sources could include databases, spreadsheets, APIs, or streaming sources.
+  - Purpose: Data importation is the first step in the data analysis pipeline. It allows analysts to access the raw data they need for analysis.
+  - Methods: Data can be imported using various methods such as file uploads, database connections, API calls, or data streaming protocols.
+  - Challenges: Ensuring data quality, handling large volumes of data efficiently, and dealing with diverse data formats are common challenges in data importation.
+
+- Storing Data
+  - Definition: Storing data involves saving imported data in a structured and organized manner within a data storage system. This system could be a database, a data warehouse, or a data lake.
+  - Purpose: Storing data allows for easy access, retrieval, and manipulation of data for analysis. It also provides a centralized repository for storing large volumes of data.
+  - Methods: Data can be stored using various storage technologies, including relational databases, NoSQL databases, cloud storage services, and distributed file systems.
+  - Considerations: Factors such as data security, scalability, performance, and cost need to be considered when choosing a data storage solution.
+
+- Exporting Data
+  - Definition: Exporting data involves transferring data from a data analytics environment to external destinations or systems. These destinations could include other databases, applications, visualization tools, or file formats.
+  - Purpose: Exporting data allows analysts to share insights, reports, or processed data with stakeholders, integrate data with other systems, or archive data for future use.
+  - Methods: Data can be exported in various formats such as CSV, Excel, JSON, SQL, or through APIs and integration platforms.
+  - Considerations: Data privacy, security, and compliance with regulations such as GDPR or HIPAA are crucial considerations when exporting data, especially when sharing sensitive information.
+    
+    ##### Using Python (Pandas) for CSV Files:
     _import pandas as pd
     
     # Import data from CSV file
@@ -84,14 +102,14 @@
     # Export data to CSV file
     df.to_csv('exported_data.csv', index=False)_
   
-  - Using SQL for Database Import/Export:
+    ##### Using SQL for Database Import/Export:
     _-- Import data from CSV file into SQL database
     LOAD DATA INFILE 'data.csv' INTO TABLE table_name FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
     
     -- Export data from SQL database to CSV file
     SELECT * INTO OUTFILE 'exported_data.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' FROM table_name;_
 
-  - Using Microsoft Excel (Power Query) for Import/Export:
+    ##### Using Microsoft Excel (Power Query) for Import/Export:
     _let
         Source = Csv.Document(File.Contents("data.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
         table = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
