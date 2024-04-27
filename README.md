@@ -90,7 +90,7 @@
   - Methods: Data can be exported in various formats such as CSV, Excel, JSON, SQL, or through APIs and integration platforms.
   - Considerations: Data privacy, security, and compliance with regulations such as GDPR or HIPAA are crucial considerations when exporting data, especially when sharing sensitive information.
     
-    ##### Using Python (Pandas) for CSV Files:
+##### Using Python (Pandas) for CSV Files:
     _import pandas as pd
     
     # Import data from CSV file
@@ -102,14 +102,14 @@
     # Export data to CSV file
     df.to_csv('exported_data.csv', index=False)_
   
-    ##### Using SQL for Database Import/Export:
+##### Using SQL for Database Import/Export:
     _-- Import data from CSV file into SQL database
     LOAD DATA INFILE 'data.csv' INTO TABLE table_name FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n';
     
     -- Export data from SQL database to CSV file
     SELECT * INTO OUTFILE 'exported_data.csv' FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' FROM table_name;_
 
-    ##### Using Microsoft Excel (Power Query) for Import/Export:
+##### Using Microsoft Excel (Power Query) for Import/Export:
     _let
         Source = Csv.Document(File.Contents("data.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
         table = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
